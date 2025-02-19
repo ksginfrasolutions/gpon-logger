@@ -9,6 +9,11 @@ services:
       - "514:514/tcp"
     volumes:
       - logger_volume:/var/log  # Mount a volume for persistent logs
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
     env_file:
       - .env  # Load environment variables from .env file
     restart: always # Restart the container if it fails.
