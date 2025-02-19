@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  gpon-logger:
+    build: .  # Build from the Dockerfile in the current directory
+    container_name: gpon-logger
+    ports:
+      - "514:514/udp"
+      - "514:514/tcp"
+    volumes:
+      - logger_volume:/var/log  # Mount a volume for persistent logs
+    env_file:
+      - .env  # Load environment variables from .env file
+    restart: always # Restart the container if it fails.
+
+volumes:
+  logger_volume:
