@@ -51,8 +51,8 @@ Follow these steps to deploy the application:
 1.  **Clone the Repository:**
 
     ```bash
-    git clone <repository_url>
-    cd <repository_directory>
+    git clone https://github.com/ksginfrasolutions/gpon-logger
+    cd  gpon-logger
     ```
 
 2.  **Run the Deployment Script:**
@@ -81,7 +81,7 @@ Follow these steps to deploy the application:
     You can view the application logs using:
 
     ```bash
-    docker logs syslog-logger
+    docker logs gpon-logger
     ```
 
     This will show the logs from the Python script. If you're using a volume mount to persist the logs, you can find them on the host system in that volume.
